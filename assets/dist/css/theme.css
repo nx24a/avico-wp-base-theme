@@ -37,6 +37,10 @@ body {
 .i2g-navigation .i2g-navigation-container.space-between {
   justify-content: space-between;
 }
+.i2g-navigation .i2g-navigation-container .logo-container {
+  display: inline-flex;
+  align-items: center;
+}
 .i2g-navigation .i2g-navigation-container .logo-container img {
   height: 1.5rem;
 }
