@@ -13,6 +13,9 @@
 body {
   background-color: #F4F2EE;
 }
+body main {
+  overflow: hidden;
+}
 
 .elementor-custom-grid {
   --display: grid;
@@ -121,6 +124,9 @@ body {
   border-color: #4E87C4;
 }
 
+footer {
+  background-color: #F4F2EE;
+}
 footer .i2g-footer-wrap {
   padding: 1rem 1.5rem;
 }
@@ -181,6 +187,795 @@ footer .i2g-footer-menu-horizontal-wrap ul li a:hover {
 }
 footer .i2g-footer-menu-horizontal-wrap ul li:last-child a {
   border-right: 0;
+}
+
+.i2g-block-abstract {
+  border: 0.75rem solid #ffffff;
+  border-radius: 1.25rem;
+  background-color: #F8FAFD;
+  padding: 1rem;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+}
+.i2g-block-abstract .i2g-tag {
+  margin-bottom: 1rem;
+}
+.i2g-block-abstract h1 {
+  font-family: "Questrial";
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.33rem;
+  letter-spacing: 0;
+  vertical-align: middle;
+  color: #191919;
+}
+.i2g-block-abstract h3 {
+  font-family: "Questrial";
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0;
+  vertical-align: middle;
+  color: #666666;
+}
+.i2g-block-abstract p {
+  font-family: "Instrument Sans";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: -3%;
+  vertical-align: middle;
+  color: #191919;
+}
+.i2g-block-abstract p span {
+  color: #666666;
+}
+.i2g-block-abstract.elementor-content-image-widget {
+  background-size: cover;
+  background-position: center center;
+  min-height: 560px;
+}
+.i2g-block-abstract .info-blocks {
+  display: inline-flex;
+}
+.i2g-block-abstract .info-blocks .content-block {
+  background-color: #F8FAFD;
+  border: 1px solid #F4F2EE;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-right: 1rem;
+}
+.i2g-block-abstract .info-blocks .content-block h2 {
+  font-family: "Questrial";
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.25rem;
+  letter-spacing: 0;
+  vertical-align: middle;
+  color: #191919;
+}
+.i2g-block-abstract .info-blocks h4 {
+  font-family: "Instrument Sans";
+  font-weight: 500;
+  font-size: 0.85rem;
+  line-height: 1.35rem;
+  letter-spacing: -3%;
+  vertical-align: middle;
+  color: #191919;
+  margin-bottom: 0;
+}
+.i2g-block-abstract.elementor-content-tile-widget .content {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.i2g-block-abstract.elementor-content-tile-widget .content h1 {
+  margin-bottom: 1rem;
+}
+.i2g-block-abstract.elementor-content-tile-widget .content p {
+  text-align: center;
+  font-family: "Questrial";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 3%;
+  color: #666666;
+}
+.i2g-block-abstract.elementor-content-tile-widget .content .tile-group {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+.i2g-block-abstract.elementor-content-tile-widget .content .tile-group .tile-item {
+  border-radius: 1.25rem;
+  padding: 0.75rem;
+  background-color: #ffffff;
+  width: calc(50% - 1rem);
+}
+.i2g-block-abstract.elementor-content-tile-widget .content .tile-group .tile-item * {
+  text-align: left;
+}
+.i2g-block-abstract.elementor-content-tile-widget .content .tile-group .tile-item h2 {
+  font-family: "Questrial";
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  letter-spacing: 0;
+  vertical-align: middle;
+}
+.i2g-block-abstract.elementor-content-tile-widget .content .tile-group .tile-item p {
+  font-family: "Questrial";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: -3%;
+  vertical-align: middle;
+}
+.i2g-block-abstract.elementor-content-tile-widget .content .tile-group .tile-item img {
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.i2g-block-abstract.elementor-content-tile-widget .content .tile-group .tile-item .tile-description {
+  margin-bottom: 1rem;
+}
+.i2g-block-abstract.elementor-content-tile-widget .content .tile-group .tile-item .tile-link {
+  margin-bottom: 0;
+}
+.i2g-block-abstract.elementor-content-tile-widget .content .tile-group .tile-item .tile-link a {
+  color: #4E87C4;
+}
+.i2g-block-abstract.elementor-content-tile-widget .content .tile-group .tile-item .tile-link a span {
+  color: #4E87C4;
+  padding-left: 0.5rem;
+  text-transform: uppercase;
+}
+.i2g-block-abstract.elementor-content-tile-widget .content .tile-group .tile-item .tile-link a:hover svg path {
+  fill: #191919;
+}
+.i2g-block-abstract.elementor-content-tile-widget .content .tile-group .tile-item .tile-link a:hover span {
+  color: #191919;
+}
+.i2g-block-abstract.elementor-content-background-media-widget {
+  position: relative;
+  background-color: #191919;
+  overflow: hidden;
+}
+.i2g-block-abstract.elementor-content-background-media-widget.i2g-box-static-background {
+  background-color: #191919;
+}
+.i2g-block-abstract.elementor-content-background-media-widget.i2g-box-static-background .i2g-static-background-image {
+  background-size: cover;
+  background-position: center center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 120%;
+  min-height: 120%;
+  opacity: 50%;
+}
+.i2g-block-abstract.elementor-content-background-media-widget.i2g-box-static-background.i2g-content-left {
+  justify-content: flex-start;
+}
+.i2g-block-abstract.elementor-content-background-media-widget.i2g-box-static-background.i2g-content-left .content {
+  width: 50%;
+  padding: 4rem 2rem;
+}
+.i2g-block-abstract.elementor-content-background-media-widget.i2g-box-static-background.i2g-content-left .content * {
+  text-align: left;
+}
+.i2g-block-abstract.elementor-content-background-media-widget.i2g-box-static-background.i2g-content-left .content h1 {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+}
+.i2g-block-abstract.elementor-content-background-media-widget.i2g-box-static-background.i2g-content-left .i2g-button-group {
+  width: 100%;
+}
+.i2g-block-abstract.elementor-content-background-media-widget.i2g-box-static-background.i2g-content-right {
+  justify-content: flex-end;
+}
+.i2g-block-abstract.elementor-content-background-media-widget.i2g-box-static-background.i2g-content-right .content {
+  width: 50%;
+  padding: 4rem 2rem;
+}
+.i2g-block-abstract.elementor-content-background-media-widget.i2g-box-static-background.i2g-content-right .content * {
+  text-align: right;
+}
+.i2g-block-abstract.elementor-content-background-media-widget.i2g-box-static-background.i2g-content-right .content h1 {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+}
+.i2g-block-abstract.elementor-content-background-media-widget.i2g-box-static-background.i2g-content-right .content .i2g-button-group {
+  width: 100%;
+}
+.i2g-block-abstract.elementor-content-background-media-widget video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 120%;
+  min-height: 120%;
+  opacity: 20%;
+}
+.i2g-block-abstract.elementor-content-background-media-widget .content {
+  position: relative;
+  z-index: 100;
+  padding: 4rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.i2g-block-abstract.elementor-content-background-media-widget .content h1 {
+  font-family: "Questrial";
+  font-weight: 400;
+  font-size: 2.5rem;
+  line-height: 3.25rem;
+  letter-spacing: 0;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+.i2g-block-abstract.elementor-content-background-media-widget .content p {
+  text-align: center;
+  font-family: "Questrial";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 3%;
+  color: #ffffff;
+}
+.i2g-block-abstract.elementor-content-background-media-widget .content .i2g-button-group .btn {
+  margin-right: 1rem;
+}
+.i2g-block-abstract.elementor-content-background-media-widget .content .i2g-button-group .btn:last-child {
+  margin-right: 0;
+}
+.i2g-block-abstract.elementor-content-background-media-widget .content .i2g-button-group .btn-primary {
+  background-color: #4E87C4;
+  border-color: #4E87C4;
+  color: #ffffff;
+}
+.i2g-block-abstract.elementor-content-background-media-widget .content .i2g-button-group .btn-outline-primary {
+  border-color: #4E87C4;
+  color: #ffffff;
+}
+.i2g-block-abstract.elementor-content-background-media-widget .content .i2g-button-group .btn-outline-primary:hover {
+  background-color: #4E87C4;
+}
+.i2g-block-abstract.elementor-content-benefits-widget .content {
+  width: 100%;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.i2g-block-abstract.elementor-content-benefits-widget .content h1 {
+  margin-bottom: 1rem;
+}
+.i2g-block-abstract.elementor-content-benefits-widget .content .benefits-group {
+  width: 80%;
+  display: inline-flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+.i2g-block-abstract.elementor-content-benefits-widget .content .benefits-group .benefits-item {
+  padding: 0.75rem;
+  width: calc(50% - 1rem);
+}
+.i2g-block-abstract.elementor-content-benefits-widget .content .benefits-group .benefits-item .item-icon {
+  padding: 1rem;
+}
+.i2g-block-abstract.elementor-content-benefits-widget .content .benefits-group .benefits-item .item-label {
+  font-family: "Questrial";
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  letter-spacing: 0;
+  vertical-align: middle;
+}
+.i2g-block-abstract.elementor-content-comparison-widget .content {
+  width: 100%;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.i2g-block-abstract.elementor-content-comparison-widget .content h1 {
+  margin-bottom: 1rem;
+}
+.i2g-block-abstract.elementor-content-comparison-widget .content .content-text * {
+  color: #666666;
+}
+.i2g-block-abstract.elementor-content-comparison-widget .content .content-text p {
+  text-align: center;
+}
+.i2g-block-abstract.elementor-content-comparison-widget .content .comparison-group {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+.i2g-block-abstract.elementor-content-comparison-widget .content .comparison-group .comparison-item {
+  border: 1px solid #F4F2EE;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  width: calc(25% - 1rem);
+}
+.i2g-block-abstract.elementor-content-comparison-widget .content .comparison-group .comparison-item .item-icon-container {
+  display: inline-flex;
+  margin-bottom: 6rem;
+}
+.i2g-block-abstract.elementor-content-comparison-widget .content .comparison-group .comparison-item .item-icon-container .item-icon {
+  display: inline-flex;
+  border: 1px solid #F4F2EE;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+.i2g-block-abstract.elementor-content-comparison-widget .content .comparison-group .comparison-item .item-icon-container .item-icon .item-icon-inner {
+  display: inline-flex;
+  align-content: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+}
+.i2g-block-abstract.elementor-content-comparison-widget .content .comparison-group .comparison-item .item-amount-container {
+  margin-bottom: 0.75rem;
+}
+.i2g-block-abstract.elementor-content-comparison-widget .content .comparison-group .comparison-item .item-amount-container .item-amount {
+  font-family: "Questrial";
+  font-weight: 400;
+  font-size: 4.5rem;
+  line-height: 4.75rem;
+  letter-spacing: -3%;
+  color: #4E87C4;
+}
+.i2g-block-abstract.elementor-content-comparison-widget .content .comparison-group .comparison-item .item-amount-container .item-suffix {
+  font-family: "Questrial";
+  font-weight: 400;
+  font-size: 4.5rem;
+  line-height: 4.75rem;
+  letter-spacing: -3%;
+  color: #4E87C4;
+}
+.i2g-block-abstract.elementor-content-comparison-widget .content .comparison-group .comparison-item .item-description-container {
+  min-height: 4rem;
+}
+.i2g-block-abstract.elementor-content-comparison-widget .content .comparison-group .comparison-item .item-description-container .item-label {
+  font-family: "Questrial";
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  letter-spacing: 0;
+  vertical-align: middle;
+  color: #191919;
+}
+.i2g-block-abstract.elementor-content-comparison-widget .content .comparison-group .comparison-item .item-description-container .item-description {
+  font-family: "Questrial";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  letter-spacing: 0;
+  vertical-align: middle;
+  color: #666666;
+}
+.i2g-block-abstract.elementor-content-testimonials-widget .content {
+  width: 100%;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.i2g-block-abstract.elementor-content-testimonials-widget .content h1 {
+  margin-bottom: 1rem;
+}
+.i2g-block-abstract.elementor-content-testimonials-widget .content .content-text * {
+  color: #666666;
+}
+.i2g-block-abstract.elementor-content-testimonials-widget .content .content-text p {
+  text-align: center;
+}
+.i2g-block-abstract.elementor-content-testimonials-widget .content .testimonial-group {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+.i2g-block-abstract.elementor-content-testimonials-widget .content .testimonial-group .testimonial-item {
+  display: inline-flex;
+  flex-direction: column;
+  align-content: stretch;
+  background-color: #ffffff;
+  border: 1px solid #F4F2EE;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  width: calc(33% - 1rem);
+}
+.i2g-block-abstract.elementor-content-testimonials-widget .content .testimonial-group .testimonial-item .testimonial-text-container {
+  height: 100%;
+}
+.i2g-block-abstract.elementor-content-testimonials-widget .content .testimonial-group .testimonial-item .testimonial-description-container {
+  min-height: 4rem;
+}
+.i2g-block-abstract.elementor-content-testimonials-widget .content .testimonial-group .testimonial-item .testimonial-description-container .testimonial-name {
+  font-family: "Questrial";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  letter-spacing: 0;
+  vertical-align: middle;
+  color: #191919;
+}
+.i2g-block-abstract.elementor-content-testimonials-widget .content .testimonial-group .testimonial-item .testimonial-description-container .testimonial-position {
+  font-family: "Questrial";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  letter-spacing: 0;
+  vertical-align: middle;
+  color: #666666;
+}
+.i2g-block-abstract.elementor-content-references-widget .content {
+  width: 100%;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.i2g-block-abstract.elementor-content-references-widget .content h1 {
+  margin-bottom: 1rem;
+}
+.i2g-block-abstract.elementor-content-references-widget .content .content-text * {
+  color: #666666;
+}
+.i2g-block-abstract.elementor-content-references-widget .content .content-text p {
+  text-align: center;
+}
+.i2g-block-abstract.elementor-content-references-widget .content .reference-group {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+.i2g-block-abstract.elementor-content-references-widget .content .reference-group .reference-item {
+  height: 22.5em;
+  position: relative;
+  display: inline-flex;
+  overflow: hidden;
+  transition-duration: 220ms;
+  cursor: pointer;
+  flex-direction: column;
+  align-content: stretch;
+  justify-content: flex-end;
+  background-color: #191919;
+  border: 1px solid #F4F2EE;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  width: calc(25% - 1rem);
+}
+.i2g-block-abstract.elementor-content-references-widget .content .reference-group .reference-item:hover {
+  background-color: #ffffff;
+}
+.i2g-block-abstract.elementor-content-references-widget .content .reference-group .reference-item:hover .reference-item-content {
+  bottom: 0;
+}
+.i2g-block-abstract.elementor-content-references-widget .content .reference-group .reference-item:hover .reference-item-content .reference-headline-container .reference-headline {
+  color: #191919;
+}
+.i2g-block-abstract.elementor-content-references-widget .content .reference-group .reference-item:hover .reference-item-content .reference-description-container {
+  opacity: 1;
+}
+.i2g-block-abstract.elementor-content-references-widget .content .reference-group .reference-item .reference-item-content {
+  position: absolute;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  left: 0;
+  bottom: calc(0% - 6.5rem);
+  transition-duration: 220ms;
+  padding: 0.75rem;
+}
+.i2g-block-abstract.elementor-content-references-widget .content .reference-group .reference-item .reference-item-content .reference-headline-container {
+  min-height: 3rem;
+  display: inline-flex;
+  align-items: flex-end;
+}
+.i2g-block-abstract.elementor-content-references-widget .content .reference-group .reference-item .reference-item-content .reference-headline-container .reference-headline {
+  font-family: "Questrial";
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  letter-spacing: 0;
+  vertical-align: middle;
+  color: #4E87C4;
+  transition-duration: 220ms;
+  transition-delay: 20ms;
+}
+.i2g-block-abstract.elementor-content-references-widget .content .reference-group .reference-item .reference-item-content .reference-description-container {
+  opacity: 0;
+  transition-duration: 220ms;
+  min-height: 4rem;
+}
+.i2g-block-abstract.elementor-content-references-widget .content .reference-group .reference-item .reference-item-content .reference-description-container p {
+  font-family: "Questrial";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  letter-spacing: 0;
+  vertical-align: middle;
+  color: #666666;
+}
+.i2g-block-abstract.elementor-content-references-widget .content .reference-group .reference-link {
+  margin-bottom: 0;
+}
+.i2g-block-abstract.elementor-content-references-widget .content .reference-group .reference-link a {
+  color: #4E87C4;
+}
+.i2g-block-abstract.elementor-content-references-widget .content .reference-group .reference-link a span {
+  color: #4E87C4;
+  padding-left: 0.25rem;
+  text-transform: uppercase;
+}
+.i2g-block-abstract.elementor-content-references-widget .content .reference-group .reference-link a:hover svg path {
+  fill: #191919;
+}
+.i2g-block-abstract.elementor-content-references-widget .content .reference-group .reference-link a:hover span {
+  color: #191919;
+}
+.i2g-block-abstract.elementor-content-references-widget .content .i2g-button-group {
+  margin-top: 1rem;
+}
+.i2g-block-abstract.elementor-content-references-widget .content .btn {
+  margin-right: 1rem;
+}
+.i2g-block-abstract.elementor-content-references-widget .content .btn:last-child {
+  margin-right: 0;
+}
+.i2g-block-abstract.elementor-content-references-widget .content .btn-primary {
+  background-color: #4E87C4;
+  border-color: #4E87C4;
+  color: #ffffff;
+}
+.i2g-block-abstract.elementor-content-references-widget .content .btn-outline-primary {
+  border-color: #4E87C4;
+  color: #ffffff;
+}
+.i2g-block-abstract.elementor-content-references-widget .content .btn-outline-primary:hover {
+  background-color: #4E87C4;
+}
+.i2g-block-abstract.elementor-content-insights-widget .content {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.i2g-block-abstract.elementor-content-insights-widget .content h1 {
+  margin-bottom: 1rem;
+}
+.i2g-block-abstract.elementor-content-insights-widget .content p {
+  text-align: center;
+  font-family: "Questrial";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 3%;
+  color: #666666;
+}
+.i2g-block-abstract.elementor-content-insights-widget .content .tile-group {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+}
+.i2g-block-abstract.elementor-content-insights-widget .content .tile-group .tile-item:nth-child(1) {
+  grid-area: 1/1/3/2;
+}
+.i2g-block-abstract.elementor-content-insights-widget .content .tile-group .tile-item:nth-child(2) {
+  grid-area: 1/2/2/3;
+}
+.i2g-block-abstract.elementor-content-insights-widget .content .tile-group .tile-item:nth-child(3) {
+  grid-area: 2/2/3/3;
+}
+.i2g-block-abstract.elementor-content-insights-widget .content .tile-group .tile-item {
+  border-radius: 1.25rem;
+  padding: 0.75rem;
+  background-color: #ffffff;
+  width: 100%;
+}
+.i2g-block-abstract.elementor-content-insights-widget .content .tile-group .tile-item.item-horizontal {
+  height: 100%;
+  display: inline-flex;
+  flex-direction: row;
+}
+.i2g-block-abstract.elementor-content-insights-widget .content .tile-group .tile-item.item-horizontal img {
+  max-width: auto !important;
+  height: 100% !important;
+}
+.i2g-block-abstract.elementor-content-insights-widget .content .tile-group .tile-item.item-horizontal .tile-content {
+  padding-left: 1rem;
+}
+.i2g-block-abstract.elementor-content-insights-widget .content .tile-group .tile-item * {
+  text-align: left;
+}
+.i2g-block-abstract.elementor-content-insights-widget .content .tile-group .tile-item h2 {
+  font-family: "Questrial";
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  letter-spacing: 0;
+  vertical-align: middle;
+}
+.i2g-block-abstract.elementor-content-insights-widget .content .tile-group .tile-item p {
+  font-family: "Questrial";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: -3%;
+  vertical-align: middle;
+}
+.i2g-block-abstract.elementor-content-insights-widget .content .tile-group .tile-item img {
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.i2g-block-abstract.elementor-content-insights-widget .content .tile-group .tile-item .tile-content-prefix {
+  font-family: "Instrument Sans";
+  margin-bottom: 0;
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 0.85rem;
+}
+.i2g-block-abstract.elementor-content-insights-widget .content .tile-group .tile-item .tile-description {
+  margin-bottom: 1rem;
+}
+.i2g-block-abstract.elementor-content-insights-widget .content .tile-group .tile-item .tile-link {
+  margin-bottom: 0;
+}
+.i2g-block-abstract.elementor-content-insights-widget .content .tile-group .tile-item .tile-link a {
+  color: #4E87C4;
+}
+.i2g-block-abstract.elementor-content-insights-widget .content .tile-group .tile-item .tile-link a span {
+  color: #4E87C4;
+  padding-left: 0.5rem;
+  text-transform: uppercase;
+}
+.i2g-block-abstract.elementor-content-insights-widget .content .tile-group .tile-item .tile-link a:hover svg path {
+  fill: #191919;
+}
+.i2g-block-abstract.elementor-content-insights-widget .content .tile-group .tile-item .tile-link a:hover span {
+  color: #191919;
+}
+.i2g-block-abstract.elementor-content-insights-widget .content .i2g-button-group {
+  margin-top: 1rem;
+}
+.i2g-block-abstract.elementor-content-insights-widget .content .btn {
+  margin-right: 1rem;
+}
+.i2g-block-abstract.elementor-content-insights-widget .content .btn:last-child {
+  margin-right: 0;
+}
+.i2g-block-abstract.elementor-content-insights-widget .content .btn-primary {
+  background-color: #4E87C4;
+  border-color: #4E87C4;
+  color: #ffffff;
+}
+.i2g-block-abstract.elementor-content-insights-widget .content .btn-outline-primary {
+  border-color: #4E87C4;
+  color: #ffffff;
+}
+.i2g-block-abstract.elementor-content-insights-widget .content .btn-outline-primary:hover {
+  background-color: #4E87C4;
+}
+.i2g-block-abstract .i2g-tag {
+  display: inline-block;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.25rem;
+  background-color: transparent;
+  font-family: "Instrument Sans";
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  letter-spacing: -3%;
+  vertical-align: middle;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.i2g-block-abstract .i2g-tag.tag-primary {
+  background-color: #4E87C4;
+  color: #ffffff;
+}
+.i2g-block-abstract.accordion-item {
+  flex-direction: column;
+  border: 0.75rem solid #ffffff !important;
+  border-radius: 1.25rem;
+  margin-bottom: 1rem;
+}
+.i2g-block-abstract.accordion-item .accordion-header {
+  width: 100%;
+}
+.i2g-block-abstract.accordion-item .accordion-header .accordion-button {
+  box-shadow: none !important;
+  padding: 0;
+  background-color: transparent;
+  font-family: "Questrial";
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  letter-spacing: 0;
+  vertical-align: middle;
+}
+.i2g-block-abstract.accordion-item .accordion-header .accordion-button .item-icon {
+  border: 1px solid #F4F2EE;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+.i2g-block-abstract.accordion-item .accordion-header .accordion-button .item-icon img {
+  width: 1.5rem;
+}
+.i2g-block-abstract.accordion-item .accordion-header .accordion-button .item-label {
+  padding-left: 0.5rem;
+}
+.i2g-block-abstract.accordion-item:last-child {
+  margin-bottom: 0;
+}
+.i2g-block-abstract.accordion-item .accordion-collapse {
+  margin-top: 1rem;
+  width: 100%;
+}
+.i2g-block-abstract.accordion-item .accordion-collapse .accordion-body {
+  border-top: 2px solid #F4F2EE;
+  width: 100%;
+  padding: 0;
+  padding-top: 1rem;
+  background-color: transparent;
+  font-family: "Questrial";
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0;
+  vertical-align: middle;
+}
+.i2g-block-abstract.accordion-item .accordion-collapse .accordion-body ul li {
+  font-weight: 600;
+  color: #191919;
+}
+.i2g-block-abstract.accordion-item .accordion-collapse .accordion-body ul li ul li {
+  font-weight: 400;
+  color: #666666;
+}
+
+.elementor-widget-content-text, .elementor-widget-content-image {
+  height: 100%;
+}
+
+.elementor-widget-content-accordion .accordion.accordion-flush {
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  background-color: transparent;
 }
 
 /*# sourceMappingURL=theme.css.map */

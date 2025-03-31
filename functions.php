@@ -81,3 +81,11 @@ function register_menus() {
     );
 }
 add_action( 'init', 'register_menus' );
+
+function wpdocs_theme_setup() {
+    add_image_size( 'i2g-tile-image-default-size', 372, 100, array( 'center', 'center' ) );
+    add_image_size( 'i2g-tile-insights-big-size', 386, 217, array( 'center', 'center' ) );
+    add_image_size( 'i2g-tile-insights-aside-size', 140, 194, array( 'center', 'center' ) );
+}
+
+add_action( 'after_setup_theme', 'wpdocs_theme_setup' );

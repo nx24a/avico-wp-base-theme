@@ -2,6 +2,7 @@
 @use "font"
 
 $black: #000000
+$white: #ffffff
 $grey: #F4F2EE
 $light-blue: #F8FAFD
 $shadow-color: #726E764D
@@ -17,6 +18,8 @@ $font-body-strong-color: #191919
 body
   background-color: $grey
 
+  main
+    overflow: hidden
 
 //Navigation
 .elementor-custom-grid
@@ -123,6 +126,7 @@ body
 
 //footer styles
 footer
+  background-color: $grey
   .i2g-footer-wrap
     padding: 1rem 1.5rem
 
@@ -176,3 +180,694 @@ footer
         &:last-child
           a
             border-right: 0
+
+//i2g Content blocks
+.i2g-block-abstract
+  border: 0.75rem solid $white
+  border-radius: 1.25rem
+  background-color: $light-blue
+  padding: 1rem
+  height: 100%
+  width: 100%
+  overflow: hidden
+  display: inline-flex
+  align-items: center
+
+  .i2g-tag
+    margin-bottom: 1rem
+
+  h1
+    font-family: "Questrial"
+    font-weight: 400
+    font-size: 2rem
+    line-height: 2.33rem
+    letter-spacing: 0
+    vertical-align: middle
+    color: $font-body-strong-color
+
+  h3
+    font-family: "Questrial"
+    font-weight: 400
+    font-size: 1.5rem
+    line-height: 2.5rem
+    letter-spacing: 0
+    vertical-align: middle
+    color: $font-body-color
+
+  p
+    font-family: "Instrument Sans"
+    font-weight: 400
+    font-size: 1rem
+    line-height: 1.5rem
+    letter-spacing: -3%
+    vertical-align: middle
+    color: $font-body-strong-color
+    span
+      color: $font-body-color
+
+  &.elementor-content-image-widget
+    background-size: cover
+    background-position: center center
+    min-height: 560px
+
+  //content blocks
+  .info-blocks
+    display: inline-flex
+    .content-block
+      background-color: $light-blue
+      border: 1px solid $grey
+      border-radius: .5rem
+      padding: .5rem
+      margin-right: 1rem
+
+      h2
+        font-family: "Questrial"
+        font-weight: 400
+        font-size: 2rem
+        line-height: 2.25rem
+        letter-spacing: 0
+        vertical-align: middle
+        color: $font-body-strong-color
+    h4
+      font-family: "Instrument Sans"
+      font-weight: 500
+      font-size: 0.85rem
+      line-height: 1.35rem
+      letter-spacing: -3%
+      vertical-align: middle
+      color: $font-body-strong-color
+      margin-bottom: 0
+
+
+  //content tiles
+  &.elementor-content-tile-widget
+    .content
+      padding: 2rem 1rem
+      display: flex
+      flex-direction: column
+      align-items: center
+      h1
+        margin-bottom: 1rem
+      p
+        text-align: center
+        font-family: "Questrial"
+        font-weight: 400
+        font-size: 1rem
+        line-height: 1.5rem
+        letter-spacing: 3%
+        color: $font-body-color
+
+      .tile-group
+        width: 100%
+        display: inline-flex
+        justify-content: space-evenly
+        flex-wrap: wrap
+        column-gap: 1rem
+        row-gap: 1rem
+        .tile-item
+          border-radius: 1.25rem
+          padding: .75rem
+          background-color: $white
+          width: calc(50% - 1rem)
+          *
+            text-align: left
+          h2
+            font-family: "Questrial"
+            font-weight: 400
+            font-size: 1.25rem
+            line-height: 1.5rem
+            letter-spacing: 0
+            vertical-align: middle
+          p
+            font-family: "Questrial"
+            font-weight: 400
+            font-size: 1rem
+            line-height: 1.5rem
+            letter-spacing: -3%
+            vertical-align: middle
+          img
+            width: 100% !important
+            height: auto !important
+            border-radius: 1rem
+            overflow: hidden
+            margin-bottom: 1rem
+          .tile-description
+            margin-bottom: 1rem
+          .tile-link
+            margin-bottom: 0
+            a
+              color: $link-hover
+              span
+                color: $link-hover
+                padding-left: .5rem
+                text-transform: uppercase
+              &:hover
+                svg
+                  path
+                    fill: $font-body-strong-color
+                span
+                  color: $font-body-strong-color
+
+
+  //content media background
+  &.elementor-content-background-media-widget
+    position: relative
+    background-color: $font-body-strong-color
+    overflow: hidden
+    &.i2g-box-static-background
+      background-color: $font-body-strong-color
+      .i2g-static-background-image
+        background-size: cover
+        background-position: center center
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        min-width: 120%
+        min-height: 120%
+        opacity: 50%
+      &.i2g-content-left
+        justify-content: flex-start
+        .content
+          width: 50%
+          padding: 4rem 2rem
+          *
+            text-align: left
+          h1
+            font-size: 1.75rem
+            line-height: 2.25rem
+        .i2g-button-group
+          width: 100%
+      &.i2g-content-right
+        justify-content: flex-end
+        .content
+          width: 50%
+          padding: 4rem 2rem
+          *
+            text-align: right
+          h1
+            font-size: 1.75rem
+            line-height: 2.25rem
+          .i2g-button-group
+            width: 100%
+    video
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      min-width: 120%
+      min-height: 120%
+      opacity: 20%
+    .content
+      position: relative
+      z-index: 100
+      padding: 4rem 4rem
+      display: flex
+      flex-direction: column
+      align-items: center
+      width: 100%
+      h1
+        font-family: "Questrial"
+        font-weight: 400
+        font-size: 2.5rem
+        line-height: 3.25rem
+        letter-spacing: 0
+        text-align: center
+        vertical-align: middle
+        margin-bottom: 1rem
+        color: $white
+      p
+        text-align: center
+        font-family: "Questrial"
+        font-weight: 400
+        font-size: 1rem
+        line-height: 1.5rem
+        letter-spacing: 3%
+        color: $white
+      .i2g-button-group
+        .btn
+          margin-right: 1rem
+        .btn:last-child
+          margin-right: 0
+        .btn-primary
+          background-color: $link-hover
+          border-color: $link-hover
+          color: $white
+        .btn-outline-primary
+          border-color: $link-hover
+          color: $white
+          &:hover
+            background-color: $link-hover
+
+
+  //content benefits
+  &.elementor-content-benefits-widget
+    .content
+      width: 100%
+      padding: 2rem 1rem
+      display: flex
+      flex-direction: column
+      align-items: center
+      h1
+        margin-bottom: 1rem
+      .benefits-group
+        width: 80%
+        display: inline-flex
+        justify-content: space-evenly
+        flex-wrap: wrap
+        column-gap: 1rem
+        row-gap: 1rem
+        .benefits-item
+          padding: .75rem
+          width: calc(50% - 1rem)
+          .item-icon
+            padding: 1rem
+          .item-label
+            font-family: "Questrial"
+            font-weight: 400
+            font-size: 1.25rem
+            line-height: 1.5rem
+            letter-spacing: 0
+            vertical-align: middle
+
+  //content comparison
+  &.elementor-content-comparison-widget
+    .content
+      width: 100%
+      padding: 2rem 1rem
+      display: flex
+      flex-direction: column
+      align-items: center
+      h1
+        margin-bottom: 1rem
+      .content-text
+        *
+          color: $font-body-color
+        p
+          text-align: center
+      .comparison-group
+        width: 100%
+        display: inline-flex
+        justify-content: space-evenly
+        flex-wrap: wrap
+        column-gap: 1rem
+        row-gap: 1rem
+        .comparison-item
+          border: 1px solid $grey
+          border-radius: .75rem
+          padding: .75rem
+          width: calc(25% - 1rem)
+          .item-icon-container
+            display: inline-flex
+            margin-bottom: 6rem
+            .item-icon
+              display: inline-flex
+              border: 1px solid $grey
+              border-radius: .5rem
+              padding: 1rem
+              .item-icon-inner
+                display: inline-flex
+                align-content: center
+                justify-content: center
+                width: 2rem
+                height: 2rem
+          .item-amount-container
+            margin-bottom: .75rem
+            .item-amount
+              font-family: "Questrial"
+              font-weight: 400
+              font-size: 4.5rem
+              line-height: 4.75rem
+              letter-spacing: -3%
+              color: $link-hover
+            .item-suffix
+              font-family: "Questrial"
+              font-weight: 400
+              font-size: 4.5rem
+              line-height: 4.75rem
+              letter-spacing: -3%
+              color: $link-hover
+          .item-description-container
+            min-height: 4rem
+            .item-label
+              font-family: "Questrial"
+              font-weight: 600
+              font-size: 1rem
+              line-height: 1.25rem
+              letter-spacing: 0
+              vertical-align: middle
+              color: $font-body-strong-color
+            .item-description
+              font-family: "Questrial"
+              font-weight: 400
+              font-size: 1rem
+              line-height: 1.25rem
+              letter-spacing: 0
+              vertical-align: middle
+              color: $font-body-color
+
+  //content testimonials
+  &.elementor-content-testimonials-widget
+    .content
+      width: 100%
+      padding: 2rem 1rem
+      display: flex
+      flex-direction: column
+      align-items: center
+      h1
+        margin-bottom: 1rem
+      .content-text
+        *
+          color: $font-body-color
+        p
+          text-align: center
+      .testimonial-group
+        width: 100%
+        display: inline-flex
+        justify-content: space-evenly
+        flex-wrap: wrap
+        column-gap: 1rem
+        row-gap: 1rem
+        .testimonial-item
+          display: inline-flex
+          flex-direction: column
+          align-content: stretch
+          background-color: $white
+          border: 1px solid $grey
+          border-radius: .75rem
+          padding: .75rem
+          width: calc(33% - 1rem)
+          .testimonial-text-container
+            height: 100%
+          .testimonial-description-container
+            min-height: 4rem
+            .testimonial-name
+              font-family: "Questrial"
+              font-weight: 400
+              font-size: 1rem
+              line-height: 1.25rem
+              letter-spacing: 0
+              vertical-align: middle
+              color: $font-body-strong-color
+            .testimonial-position
+              font-family: "Questrial"
+              font-weight: 400
+              font-size: 1rem
+              line-height: 1.25rem
+              letter-spacing: 0
+              vertical-align: middle
+              color: $font-body-color
+
+  &.elementor-content-references-widget
+    .content
+      width: 100%
+      padding: 2rem 1rem
+      display: flex
+      flex-direction: column
+      align-items: center
+      h1
+        margin-bottom: 1rem
+      .content-text
+        *
+          color: $font-body-color
+        p
+          text-align: center
+      .reference-group
+        width: 100%
+        display: inline-flex
+        justify-content: space-evenly
+        flex-wrap: wrap
+        column-gap: 1rem
+        row-gap: 1rem
+        .reference-item
+          height: 22.5em
+          position: relative
+          display: inline-flex
+          overflow: hidden
+          transition-duration: 220ms
+          cursor: pointer
+          flex-direction: column
+          align-content: stretch
+          justify-content: flex-end
+          background-color: $font-body-strong-color
+          border: 1px solid $grey
+          border-radius: .75rem
+          padding: .75rem
+          width: calc(25% - 1rem)
+          &:hover
+            background-color: $white
+            .reference-item-content
+              bottom: 0
+              .reference-headline-container
+                .reference-headline
+                  color: $font-body-strong-color
+              .reference-description-container
+                opacity: 1
+          .reference-item-content
+            position: absolute
+            display: inline-flex
+            flex-direction: column
+            justify-content: flex-end
+            height: 100%
+            left: 0
+            bottom: calc(0% - 6.5rem)
+            transition-duration: 220ms
+            padding: .75rem
+            .reference-headline-container
+              min-height: 3rem
+              display: inline-flex
+              align-items: flex-end
+              .reference-headline
+                font-family: "Questrial"
+                font-weight: 400
+                font-size: 1.25rem
+                line-height: 1.5rem
+                letter-spacing: 0
+                vertical-align: middle
+                color: $link-hover
+                transition-duration: 220ms
+                transition-delay: 20ms
+            .reference-description-container
+              opacity: 0
+              transition-duration: 220ms
+              min-height: 4rem
+              p
+                font-family: "Questrial"
+                font-weight: 400
+                font-size: 1rem
+                line-height: 1.25rem
+                letter-spacing: 0
+                vertical-align: middle
+                color: $font-body-color
+        .reference-link
+            margin-bottom: 0
+            a
+              color: $link-hover
+              span
+                color: $link-hover
+                padding-left: .25rem
+                text-transform: uppercase
+              &:hover
+                svg
+                  path
+                    fill: $font-body-strong-color
+                span
+                  color: $font-body-strong-color
+      .i2g-button-group
+        margin-top: 1rem
+      .btn
+        margin-right: 1rem
+      .btn:last-child
+        margin-right: 0
+      .btn-primary
+        background-color: $link-hover
+        border-color: $link-hover
+        color: $white
+      .btn-outline-primary
+        border-color: $link-hover
+        color: $white
+        &:hover
+          background-color: $link-hover
+
+  &.elementor-content-insights-widget
+    .content
+      padding: 2rem 1rem
+      display: flex
+      flex-direction: column
+      align-items: center
+      h1
+        margin-bottom: 1rem
+      p
+        text-align: center
+        font-family: "Questrial"
+        font-weight: 400
+        font-size: 1rem
+        line-height: 1.5rem
+        letter-spacing: 3%
+        color: $font-body-color
+
+      .tile-group
+        width: 100%
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        grid-template-rows: repeat(2, 1fr)
+        grid-column-gap: 1rem
+        grid-row-gap: 1rem
+        .tile-item:nth-child(1)
+          grid-area: 1 / 1 / 3 / 2
+        .tile-item:nth-child(2)
+          grid-area: 1 / 2 / 2 / 3
+        .tile-item:nth-child(3)
+          grid-area: 2 / 2 / 3 / 3
+        .tile-item
+          border-radius: 1.25rem
+          padding: .75rem
+          background-color: $white
+          width: 100%
+          &.item-horizontal
+            height: 100%
+            display: inline-flex
+            flex-direction: row
+            img
+              max-width: auto !important
+              height: 100% !important
+            .tile-content
+              padding-left: 1rem
+          *
+            text-align: left
+          h2
+            font-family: "Questrial"
+            font-weight: 400
+            font-size: 1.25rem
+            line-height: 1.5rem
+            letter-spacing: 0
+            vertical-align: middle
+          p
+            font-family: "Questrial"
+            font-weight: 400
+            font-size: 1rem
+            line-height: 1.5rem
+            letter-spacing: -3%
+            vertical-align: middle
+          img
+            width: 100% !important
+            height: auto !important
+            border-radius: 1rem
+            overflow: hidden
+            margin-bottom: 1rem
+          .tile-content-prefix
+            font-family: "Instrument Sans"
+            margin-bottom: 0
+            font-weight: 600
+            font-size: 0.75rem
+            line-height: 0.85rem
+          .tile-description
+            margin-bottom: 1rem
+          .tile-link
+            margin-bottom: 0
+            a
+              color: $link-hover
+              span
+                color: $link-hover
+                padding-left: .5rem
+                text-transform: uppercase
+              &:hover
+                svg
+                  path
+                    fill: $font-body-strong-color
+                span
+                  color: $font-body-strong-color
+      .i2g-button-group
+        margin-top: 1rem
+      .btn
+        margin-right: 1rem
+      .btn:last-child
+        margin-right: 0
+      .btn-primary
+        background-color: $link-hover
+        border-color: $link-hover
+        color: $white
+      .btn-outline-primary
+        border-color: $link-hover
+        color: $white
+        &:hover
+          background-color: $link-hover
+  //tags
+  .i2g-tag
+    display: inline-block
+    border-radius: .5rem
+    padding: .5rem .25rem
+    background-color: transparent
+    font-family: "Instrument Sans"
+    font-size: .75rem
+    line-height: 1.5rem
+    letter-spacing: -3%
+    vertical-align: middle
+    text-transform: uppercase
+    font-weight: 600
+
+    &.tag-primary
+      background-color: $link-hover
+      color: $white
+
+  //i2g Accordion item
+  &.accordion-item
+    flex-direction: column
+    border: 0.75rem solid $white !important
+    border-radius: 1.25rem
+    margin-bottom: 1rem
+    .accordion-header
+      width: 100%
+      .accordion-button
+        box-shadow: none !important
+        padding: 0
+        background-color: transparent
+        font-family: "Questrial"
+        font-weight: 400
+        font-size: 1.25rem
+        line-height: 1.5rem
+        letter-spacing: 0
+        vertical-align: middle
+        .item-icon
+          border: 1px solid $grey
+          border-radius: .5rem
+          padding: .5rem
+          img
+            width: 1.5rem
+        .item-label
+          padding-left: .5rem
+    &:last-child
+      margin-bottom: 0
+    .accordion-collapse
+      margin-top: 1rem
+      width: 100%
+      .accordion-body
+        border-top: 2px solid $grey
+        width: 100%
+        padding: 0
+        padding-top: 1rem
+        background-color: transparent
+        font-family: "Questrial"
+        font-weight: 400
+        font-size: 1rem
+        line-height: 1.5rem
+        letter-spacing: 0
+        vertical-align: middle
+        ul
+          li
+            font-weight: 600
+            color: $font-body-strong-color
+            ul
+              li
+                font-weight: 400
+                color: $font-body-color
+
+//elementor widgets adjust
+.elementor-widget-content-text, .elementor-widget-content-image
+  height: 100%
+.elementor-widget-content-accordion
+  .accordion.accordion-flush
+    width: 100%
+    display: inline-flex
+    flex-direction: column
+    background-color: transparent

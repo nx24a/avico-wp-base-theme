@@ -2,7 +2,8 @@
     <div class="elementor">
         <div class="elementor-element elementor-custom-grid e-con e-grid e-con-boxed e-parent">
             <div class="e-con-inner">
-                <div class="i2g-footer-wrap">
+                <div class="elementor-element e-con e-child">
+                    <div class="i2g-footer-wrap">
                     <div class="row">
                         <div class="col-3">
                             <div class="mb-3">
@@ -49,6 +50,7 @@
                             <?php wp_nav_menu( array( 'theme_location' => 'footer-privacy', 'container_class' => 'i2g-footer-menu-horizontal-wrap' ) ); ?>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
