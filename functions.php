@@ -136,3 +136,18 @@ function dwp_mime($mimes) {
     return $mimes;
 }
 add_filter('upload_mimes', 'dwp_mime');
+
+function i2c_referenz_post_type() {
+    register_post_type('i2c_reference',
+        array(
+            'labels'      => array(
+                'name'          => __('Referenz', 'textdomain'),
+                'singular_name' => __('Referenz', 'textdomain'),
+            ),
+            'public'      => true,
+            'has_archive' => true,
+            'rewrite'     => array( 'slug' => 'referenz' ),
+        )
+    );
+}
+add_action('init', 'i2c_referenz_post_type');
