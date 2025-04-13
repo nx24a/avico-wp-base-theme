@@ -7,14 +7,15 @@
                     <div class="row">
                         <div class="col-3">
                             <div class="mb-3">
-                                <a href="#">
+                                <a href="/startseite">
                                     <img src="/wp-content/themes/avico-wp-base-theme/assets/dist/images/logo.svg" alt="Logo" />
                                 </a>
                             </div>
                             <div>
                                 <p>Wir entwickeln und realisieren nachhaltige, wirtschaftliche Lösungen für vernetzte Energie- und Mobilitätssysteme. Strategie, Technologie, Umsetzung – aus einer Hand. <br/><br/>
                                     inno2grid GmbH<br/>
-                                    EUREF-Campus 12-13<br/>10829 Berlin<br/><br/>Kontakt<br/>LinkedIn
+                                    EUREF-Campus 12-13<br/>10829 Berlin<br/><br/>
+                                    <?php wp_nav_menu( array( 'theme_location' => 'footer-contact', 'container_class' => 'i2g-footer-menu-wrap' ) ); ?>
                                 </p>
                             </div>
                         </div>

@@ -34,21 +34,12 @@
                                         <div class="icon-text"><a href="#">030 – 12345678</a></div>
                                     </div>
                                     <?php wp_nav_menu( array( 'theme_location' => 'header-extra-menu', 'container_class' => 'i2g-menu-extra-wrap' ) ); ?>
-                                    <div class="i2g-language-menu">
-                                        <ul class="menu">
-                                            <li class="active">
-                                                <a href="#">DE</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">EN</a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                    <?php the_widget( 'avico_language_menu_widget' ); ?>
                                 </div>
                             </div>
                             <div class="i2g-navigation-container space-between">
                                 <div class="logo-container">
-                                    <a href="#">
+                                    <a href="/startseite">
                                         <img src="/wp-content/themes/avico-wp-base-theme/assets/dist/images/logo.svg" alt="Logo" />
                                     </a>
                                 </div>

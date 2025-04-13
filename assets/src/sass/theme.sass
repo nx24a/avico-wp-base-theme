@@ -4,12 +4,14 @@
 $black: #000000
 $white: #ffffff
 $grey: #F4F2EE
-$light-blue: #F8FAFD
+$light-blue: rgba(248,250,253,1)
 $shadow-color: #726E764D
 $border-color: #E8E8E8
 $link-hover: #4E87C4
 $font-body-color: #666666
 $font-body-strong-color: #191919
+$link-hover-90: rgba(78,135, 198, .9)
+$link-hover-grey-95: rgba(248, 250, 253, 0.95)
 
 
 *
@@ -31,7 +33,6 @@ body
 .i2g-navigation
   background-color: $light-blue
   border-radius: 1.25rem
-  overflow: hidden
   box-shadow: 0 8px 16px 0 $shadow-color
 
   .i2g-navigation-container
@@ -76,6 +77,34 @@ body
       display: inline-flex
       margin-bottom: 0
       li
+        position: relative
+        &.menu-item-has-children
+          &:hover
+            .sub-menu
+              height: auto
+              opacity: 1
+          & > a
+            display: inline-flex
+          a::after
+            margin-left: .5rem
+            margin-top: .25rem
+            content: ' '
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23052c65' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e")
+            transform: rotate(0deg)
+            width: 1rem
+            height: 1rem
+          ul
+            height: 0
+            transition-duration: 64ms
+            opacity: 0
+            list-style-type: none
+            padding: .5rem 1.5rem
+            margin: 0
+            background-color: $light-blue
+            border-radius: 1rem
+            position: absolute
+            z-index: 500
+            box-shadow: 5px 8px 16px 0 $shadow-color
         a
           display: block
           padding: .25rem .75rem
@@ -84,6 +113,13 @@ body
           text-decoration: none
           &:hover
             color: $link-hover
+        &.current-menu-item
+          a
+            color: $link-hover
+        &.current-menu-ancestor
+          & > a
+            color: $link-hover
+
 
   .i2g-menu-extra-wrap
     .menu
@@ -98,6 +134,9 @@ body
           color: $black
           text-decoration: none
           &:hover
+            color: $link-hover
+        &.current-menu-item
+          a
             color: $link-hover
 
   .i2g-language-menu
@@ -115,6 +154,9 @@ body
           text-decoration: none
           &:hover
             color: $link-hover !important
+        &.current-menu-item
+          a
+            color: $link-hover
       .active
         a
           color: $link-hover !important
@@ -259,6 +301,17 @@ footer
       margin-bottom: 0
 
 
+  &.elementor-content-text-widget
+    .content
+      display: inline-flex
+      flex-direction: column
+      &.content-left
+        align-items: flex-start
+      &.content-center
+        align-items: center
+      &.content-right
+        align-items: flex-end
+
   //content tiles
   &.elementor-content-tile-widget
     .content
@@ -395,6 +448,15 @@ footer
         text-align: center
         vertical-align: middle
         margin-bottom: 1rem
+        color: $white
+      h3
+        font-family: "Questrial"
+        font-weight: 400
+        font-size: 1.5rem
+        line-height: 2.5rem
+        letter-spacing: 0
+        text-align: center
+        vertical-align: middle
         color: $white
       p
         text-align: center
@@ -586,7 +648,10 @@ footer
       flex-direction: column
       align-items: center
       h1
+        text-align: center
         margin-bottom: 1rem
+      h3
+        text-align: center
       .content-text
         *
           color: $font-body-color
@@ -600,6 +665,22 @@ footer
         column-gap: 1rem
         row-gap: 1rem
         .reference-item
+          &.reference-item-amount-1
+            width: 100%
+            .reference-item-content
+              bottom: calc(0% - 5rem)
+          &.reference-item-amount-2
+            width: calc(50% - 1rem)
+            .reference-item-content
+              bottom: calc(0% - 5rem)
+          &.reference-item-amount-3
+            width: calc(33% - 1rem)
+            .reference-item-content
+              bottom: calc(0% - 5.25rem)
+          &.reference-item-amount-4
+            width: calc(25% - 1rem)
+            .reference-item-content
+              bottom: calc(0% - 6.5rem)
           height: 22.5em
           position: relative
           display: inline-flex
@@ -647,6 +728,7 @@ footer
                 color: $link-hover
                 transition-duration: 220ms
                 transition-delay: 20ms
+                text-align: left
             .reference-description-container
               opacity: 0
               transition-duration: 220ms
@@ -715,10 +797,16 @@ footer
         grid-row-gap: 1rem
         .tile-item:nth-child(1)
           grid-area: 1 / 1 / 3 / 2
+          img
+            width: 100%
         .tile-item:nth-child(2)
           grid-area: 1 / 2 / 2 / 3
+          img
+            max-width: 25%
         .tile-item:nth-child(3)
           grid-area: 2 / 2 / 3 / 3
+          img
+            max-width: 25%
         .tile-item
           border-radius: 1.25rem
           padding: .75rem
@@ -729,7 +817,6 @@ footer
             display: inline-flex
             flex-direction: row
             img
-              max-width: auto !important
               height: 100% !important
             .tile-content
               padding-left: 1rem
@@ -792,6 +879,185 @@ footer
         color: $white
         &:hover
           background-color: $link-hover
+  &.content-dynamic-abstract-widget
+    .elementor-widget-container, .elementor-widget-content-inset-team-abstract, .accordion-abstract-container, .team-group, .elementor-widget-wpforms
+      width: 100%
+    .content
+      width: 100%
+      padding: 2rem 1rem
+      display: flex
+      flex-direction: column
+      align-items: center
+      h1
+        margin-bottom: 1rem
+      .content-text
+        *
+          color: $font-body-color
+        p
+          text-align: center
+      .testimonial-group
+        width: 100%
+        display: inline-flex
+        justify-content: space-evenly
+        flex-wrap: wrap
+        column-gap: 1rem
+        row-gap: 1rem
+        .testimonial-item
+          display: inline-flex
+          flex-direction: column
+          align-content: stretch
+          background-color: $white
+          border: 1px solid $grey
+          border-radius: .75rem
+          padding: .75rem
+          width: calc(33% - 1rem)
+          .testimonial-text-container
+            height: 100%
+          .testimonial-description-container
+            min-height: 4rem
+            .testimonial-name
+              font-family: "Questrial"
+              font-weight: 400
+              font-size: 1rem
+              line-height: 1.25rem
+              letter-spacing: 0
+              vertical-align: middle
+              color: $font-body-strong-color
+            .testimonial-position
+              font-family: "Questrial"
+              font-weight: 400
+              font-size: 1rem
+              line-height: 1.25rem
+              letter-spacing: 0
+              vertical-align: middle
+              color: $font-body-color
+    .team-group
+      display: flex
+      column-gap: 1rem
+      justify-content: space-between
+      .team-member
+        .member-image
+          border: 0.75rem solid $white
+          border-radius: 1.25rem
+          background-color: $light-blue
+          box-shadow: 0 0 1px 0 $shadow-color
+          img
+            border-radius: .75rem
+      .member-info-container
+        background-color: $white
+        border-radius: 1.25rem
+        box-shadow: 0 0 1px 0 $shadow-color
+        display: flex
+        width: 100%
+        padding: 2rem
+        margin-top: 1rem
+        .icon-box
+          min-height: 4rem
+          padding: 1rem
+          display: inline-flex
+          align-items: center
+          background-color: $light-blue
+          border-radius: .75rem
+          box-shadow: 0 0 1px 0 $shadow-color
+        .content-box
+          margin-left: 2rem
+          padding-top: .5rem
+          *
+            font-family: "Instrument Sans", serif
+            color: $font-body-color
+          span
+            color: $font-body-strong-color
+
+    .wpforms-container
+      *
+        font-family: "Instrument Sans", Sans-serif
+      margin: 0 !important
+      width: 100%
+      padding: 1rem 1rem
+      border: 0.75rem solid $white
+      border-radius: 1.25rem
+      background-color: $white
+      box-shadow: 0 0 1px 0 $shadow-color
+      .wpforms-field-row, .wpforms-field-medium
+        width: 100%
+        max-width: 100%
+      label, legend
+        color: $font-body-color
+        font-weight: 600
+      ul
+        label
+          font-weight: 400
+          padding-inline-start: 0 !important
+      input, textarea
+        background-color: $light-blue
+        border-radius: .75rem
+        padding: 1rem 1rem
+        &::placeholder
+          color: $font-body-color
+      button
+        width: 100%
+        padding: 1rem 1rem
+        background-color: $link-hover !important
+        border-radius: .75rem
+  &.elementor-content-link-group-widget
+    .content
+      padding: 2rem 1rem
+      display: flex
+      flex-direction: column
+      align-items: center
+      width: 100%
+      h1
+        margin-bottom: 1rem
+      p
+        text-align: center
+        font-family: "Questrial"
+        font-weight: 400
+        font-size: 1rem
+        line-height: 1.5rem
+        letter-spacing: 3%
+        color: $font-body-color
+      .link-group
+        margin-top: 1rem
+        width: 100%
+        display: inline-flex
+        justify-content: space-evenly
+        flex-wrap: wrap
+        column-gap: 1rem
+        row-gap: 1rem
+        .link-item
+          border-radius: 1.25rem
+          padding: 2rem 1rem
+          background-color: $white
+          width: calc(25% - 1rem)
+          box-shadow: 0 0 2rem 0 $shadow-color
+
+          *
+            text-align: left
+          font-family: "Instrument Sans", Sans-serif
+          font-weight: 400
+          font-size: 1rem
+          line-height: 1.5rem
+          letter-spacing: -3%
+          vertical-align: middle
+          a
+            display: inline-flex
+            width: 100%
+            justify-content: space-between
+            align-items: center
+            color: $link-hover
+            span
+              color: $font-body-color
+            svg
+              transition-duration: 220ms
+              margin-right: 0
+            &:hover
+              svg
+                margin-right: 1rem
+                path
+                  fill: $link-hover
+              span
+                color: $link-hover
+
   //tags
   .i2g-tag
     display: inline-block
@@ -871,3 +1137,292 @@ footer
     display: inline-flex
     flex-direction: column
     background-color: transparent
+
+.elementor-content-tabs-widget
+  .elementor-widget-container
+    *
+      transition-duration: 220ms
+    .e-n-tabs
+      display: inline-flex
+      align-items: start
+      flex-direction: row
+      column-gap: 1rem
+      width: 100%
+      .e-n-tabs-heading
+        width: 33%
+        display: inline-flex
+        flex-direction: column
+        overflow: hidden
+        position: relative
+        .tab-header-background
+          position: absolute
+          display: inline-flex
+          align-items: center
+          justify-content: space-between
+          padding: 1rem 1.5rem
+          border-radius: 0.5rem
+          width: 100%
+          height: 100%
+          top: 0
+          left: 0
+          background-color: $link-hover-grey-95
+          span
+            color: $font-body-strong-color
+          svg
+            path
+              fill: $link-hover
+        .e-n-tab-title
+          border: 12px solid $white
+          border-radius: 1.25rem
+          min-height: 120px
+          background-size: cover
+          background-position: center center
+          margin-bottom: .25rem
+          .e-n-tab-title-text
+            text-align: left
+          &:last-child
+            margin-bottom: 0
+      .e-n-tabs-content
+        width: 66%
+        border: 12px solid $white
+        border-radius: 1.25rem
+        background-color: $light-blue
+        .content
+          h1
+            font-family: "Questrial"
+            font-weight: 400
+            font-size: 2rem
+            line-height: 2.33rem
+            letter-spacing: 0
+            vertical-align: middle
+            margin-top: .5rem
+            color: $font-body-strong-color
+          h3
+            font-family: "Questrial"
+            font-weight: 400
+            font-size: 1.5rem
+            line-height: 2.5rem
+            letter-spacing: 0
+            vertical-align: middle
+            color: $link-hover
+          p, li
+            color: $font-body-color
+            font-size: 1rem
+            font-family: "Instrument Sans"
+            font-weight: 400
+            line-height: 1.5rem
+            letter-spacing: -3%
+          ul
+            list-style-type: square
+          .content-item
+            margin-bottom: .5rem
+            .content-tile-description
+              p
+                margin-bottom: 0
+            .content-item-icon
+              margin-right: .5rem
+            .content-child-container
+              .content-child-item
+                display: inline-flex
+                flex-direction: row
+                align-items: center
+                margin-bottom: .5rem
+                p
+                  margin-bottom: 0
+          .i2g-tag
+            display: inline-block
+            border-radius: .5rem
+            padding: .5rem .25rem
+            background-color: transparent
+            font-family: "Instrument Sans"
+            font-size: .75rem
+            line-height: 1.5rem
+            letter-spacing: -3%
+            vertical-align: middle
+            text-transform: uppercase
+            font-weight: 600
+            &.tag-primary
+              background-color: $link-hover
+              color: $white
+
+  & > .elementor-widget-container
+    & > .e-n-tabs
+      & > .e-n-tabs-heading
+        & .e-n-tab-title[aria-selected="true"]
+          .tab-header-background
+            background-color: $link-hover-90
+            span
+              color: $white
+            svg
+              path
+                fill: $white
+
+.elementor-content-blog-widget
+  *
+    text-align: left
+  .reading-time
+    font-family: "Instrument Sans", Sans-serif
+    font-weight: 700
+    font-size: .75rem
+    line-height: 1rem
+    letter-spacing: -3%
+    color: $font-body-color
+    margin-bottom: .5rem
+  h2
+    font-family: "Questrial"
+    font-weight: 400
+    font-size: 1.25rem
+    line-height: 1.5rem
+    letter-spacing: 0
+    vertical-align: middle
+    color: $link-hover
+  p
+    font-family: "Questrial"
+    font-weight: 400
+    font-size: 1rem
+    line-height: 1.5rem
+    letter-spacing: -3%
+    vertical-align: middle
+    margin-bottom: 0
+    color: $font-body-color
+  .tile-link
+    margin-top: .5rem
+    a
+      color: $link-hover
+      span
+        color: $link-hover
+        padding-left: .5rem
+        text-transform: uppercase
+      &:hover
+        svg
+          path
+            fill: $font-body-strong-color
+        span
+          color: $font-body-strong-color
+
+
+  .i2g-blog-cover-post
+    border: 0.75rem solid $white
+    border-radius: 1.25rem
+    background-color: $white
+    margin-bottom: 2rem
+    img
+      width: 100% !important
+      border-radius: 0.75rem
+    .content
+      padding: 1rem
+      height: 100%
+      width: 100%
+      overflow: hidden
+
+  .i2g-blog-post-tiles
+    *
+      text-decoration: none
+      cursor: pointer
+    &.cols-50
+      .i2g-blog-post-tile
+        width: calc(50% - 1rem)
+    width: 100%
+    display: inline-flex
+    justify-content: space-evenly
+    flex-wrap: wrap
+    flex-wrap: wrap
+    column-gap: 1rem
+    row-gap: 1rem
+    .i2g-blog-post-tile
+      &:hover
+        .content
+          background: $font-body-strong-color
+          h2
+            color: $link-hover
+          p
+            color: $white
+          svg
+            path
+              fill: $link-hover !important
+          .tile-link
+            a
+              span
+                color: $link-hover !important
+      *
+        transition-duration: 220ms
+      background-size: cover
+      background-position: center center
+      border: 0.75rem solid $white
+      border-radius: 1.25rem
+      width: calc(33% - 1rem)
+      min-height: 480px
+      overflow: hidden
+      .content
+        background: linear-gradient(0deg, $light-blue 33%, rgba(255,255,255,0) 100%)
+        opacity: 1
+        padding: 1rem
+        width: 100%
+        height: 100%
+        display: inline-flex
+        flex-direction: column
+        align-items: flex-start
+        justify-content: flex-end
+      display: inline-flex
+      align-items: flex-end
+
+.i2g-blog-post
+  border: 0.75rem solid $white
+  border-radius: 1.25rem
+  background-color: $white
+  margin-bottom: 1rem
+  *
+    text-align: left
+  .reading-time
+    font-family: "Instrument Sans", Sans-serif
+    font-weight: 700
+    font-size: .75rem
+    line-height: 1rem
+    letter-spacing: -3%
+    color: $font-body-color
+    margin-bottom: .5rem
+  h1
+    font-family: "Questrial"
+    font-weight: 400
+    font-size: 2rem
+    line-height: 4rem
+    letter-spacing: 0
+    vertical-align: middle
+  h3
+    font-family: "Questrial"
+    font-weight: 400
+    font-size: 1.25rem
+    line-height: 1.5rem
+    margin-bottom: .5rem
+    letter-spacing: 0
+    vertical-align: middle
+  p
+    font-family: "Instrument Sans", Sans-serif
+    font-weight: 400
+    font-size: 1rem
+    line-height: 1.5rem
+    letter-spacing: -3%
+    vertical-align: middle
+    color: $font-body-color
+  .tile-link
+    margin-top: .5rem
+    a
+      color: $link-hover
+      span
+        color: $link-hover
+        padding-left: .5rem
+        text-transform: uppercase
+      &:hover
+        svg
+          path
+            fill: $font-body-strong-color
+        span
+          color: $font-body-strong-color
+
+  img
+    width: 100% !important
+    border-radius: 0.75rem
+  .content
+    padding: 1rem
+    width: 100%
+    overflow: hidden
