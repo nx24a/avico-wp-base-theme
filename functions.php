@@ -124,6 +124,7 @@ function wpdocs_theme_setup() {
     add_image_size( 'i2g-tile-insights-aside-size', 140, 194, array( 'center', 'center' ) );
     add_image_size( 'i2g-image-abstract-aside-size', 620, 600, array( 'center', 'center' ) );
     add_image_size('i2g-team-image-default-size', 600,600, array('center', 'center'));
+    add_image_size('i2g-image-big-size', 910,560, array('center', 'center'));
     add_image_size('i2g-post-tile-default-size', 300, 400 , array('center', 'center'));
     add_image_size('i2g-post-tile-big-size', 415, 430 , array('center', 'center'));
     add_image_size('i2g-post-header-default-size', 867, 340 , array('center', 'center'));
@@ -141,13 +142,34 @@ function i2c_referenz_post_type() {
     register_post_type('i2c_reference',
         array(
             'labels'      => array(
-                'name'          => __('Referenz', 'textdomain'),
+                'name'          => __('Referenzen', 'textdomain'),
                 'singular_name' => __('Referenz', 'textdomain'),
             ),
             'public'      => true,
             'has_archive' => true,
             'rewrite'     => array( 'slug' => 'referenz' ),
+            'supports' => array(
+                'title',
+                'editor',
+                'custom-fields',
+                'thumbnail',
+            )
         )
     );
 }
 add_action('init', 'i2c_referenz_post_type');
+add_theme_support( 'post-thumbnails', array( 'post', 'page', 'i2c_reference' ) );
+
+add_action('wp_insert_post', 'set_default_custom_fields_i2c_reference');
+
+function set_default_custom_fields_i2c_reference($post_id)
+{
+    if ( $_GET['post_type'] === 'i2c_reference' ) {
+        add_post_meta($post_id, 'referenz_branche', '', true);
+        add_post_meta($post_id, 'referenz_kunde', '', true);
+        add_post_meta($post_id, 'referenz_projekttyp', '', true);
+        add_post_meta($post_id, 'referenz_zeitraum', '', true);
+        #add_metadata('post')
+    }
+    return true;
+}

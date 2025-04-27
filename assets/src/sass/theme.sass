@@ -3,6 +3,7 @@
 
 $black: #000000
 $white: #ffffff
+$white-25: rgba(255,255,255,0.25)
 $grey: #F4F2EE
 $light-blue: rgba(248,250,253,1)
 $shadow-color: #726E764D
@@ -235,6 +236,9 @@ footer
   display: inline-flex
   align-items: center
 
+  .content
+    min-width: 100%
+
   .i2g-tag
     margin-bottom: 1rem
 
@@ -257,20 +261,39 @@ footer
     color: $font-body-color
 
   p
-    font-family: "Instrument Sans"
+    font-family: "Questrial"
     font-weight: 400
     font-size: 1rem
     line-height: 1.5rem
     letter-spacing: -3%
     vertical-align: middle
-    color: $font-body-strong-color
+    color: $font-body-color
     span
-      color: $font-body-color
+      color: $font-body-strong-color
 
   &.elementor-content-image-widget
     background-size: cover
     background-position: center center
     min-height: 560px
+    display: inline-flex
+    align-items: flex-start
+    padding: 1rem
+    .video-label
+      padding: .5rem .5rem
+      background: $white-25
+      border-radius: .5rem
+      a
+        span
+          color: $font-body-color
+          font-weight: 600
+          margin-left: .5rem
+      &:hover
+        background: $shadow-color
+        a
+          span
+            color: $white
+
+
 
   //content blocks
   .info-blocks
@@ -300,6 +323,21 @@ footer
       color: $font-body-strong-color
       margin-bottom: 0
 
+
+  .info-link
+    margin-bottom: 0
+    a
+      color: $link-hover
+      span
+        color: $link-hover
+        padding-left: .5rem
+        text-transform: uppercase
+      &:hover
+        svg
+          path
+            fill: $font-body-strong-color
+        span
+          color: $font-body-strong-color
 
   &.elementor-content-text-widget
     .content
@@ -403,6 +441,8 @@ footer
         justify-content: flex-start
         .content
           width: 50%
+          max-width: 50% !important
+          min-width: auto !important
           padding: 4rem 2rem
           *
             text-align: left
@@ -412,6 +452,9 @@ footer
         .i2g-button-group
           width: 100%
       &.i2g-content-right
+        width: 50%
+        max-width: 50% !important
+        min-width: auto !important
         justify-content: flex-end
         .content
           width: 50%
@@ -484,12 +527,68 @@ footer
 
   //content benefits
   &.elementor-content-benefits-widget
+    position: relative
+    background-color: $font-body-strong-color
+    overflow: hidden
+    &.i2g-box-static-background
+      .content
+        *
+          color: $font-body-color
+      background-color: $font-body-strong-color
+      .i2g-static-background-image
+        background-size: cover
+        background-position: center center
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        min-width: 120%
+        min-height: 120%
+        opacity: 50%
+      &.i2g-content-left
+        justify-content: flex-start
+        .content
+          width: 50%
+          max-width: 50% !important
+          min-width: auto !important
+          padding: 4rem 2rem
+          *
+            text-align: left
+          h1
+            font-size: 1.75rem
+            line-height: 2.25rem
+        .i2g-button-group
+          width: 100%
+      &.i2g-content-right
+        justify-content: flex-end
+        .content
+          width: 50%
+          padding: 4rem 2rem
+          *
+            text-align: right
+          h1
+            font-size: 1.75rem
+            line-height: 2.25rem
+          .i2g-button-group
+            width: 100%
+    video
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      min-width: 120%
+      min-height: 120%
+      opacity: 20%
     .content
+      *
+        color: $white
       width: 100%
       padding: 2rem 1rem
       display: flex
       flex-direction: column
       align-items: center
+      position: relative
+      z-index: 100
       h1
         margin-bottom: 1rem
       .benefits-group
@@ -587,6 +686,122 @@ footer
               letter-spacing: 0
               vertical-align: middle
               color: $font-body-color
+
+  //content value tiles
+  &.elementor-content-values-tile-widget
+    .content
+      width: 100%
+      padding: 2rem 1rem
+      display: flex
+      flex-direction: column
+      align-items: center
+      h1
+        margin-bottom: 1rem
+      .content-text
+        *
+          color: $font-body-color
+        p
+          text-align: center
+      .comparison-group
+        width: 100%
+        display: inline-flex
+        justify-content: space-evenly
+        flex-wrap: wrap
+        column-gap: 1rem
+        row-gap: 1rem
+        .comparison-item
+          border: 1px solid $grey
+          border-radius: .75rem
+          padding: .75rem
+          width: calc(33% - 1rem)
+          .item-icon-container
+            display: inline-flex
+            margin-bottom: 1rem
+            .item-icon
+              display: inline-flex
+              border: 1px solid $grey
+              border-radius: .5rem
+              padding: 1rem
+              .item-icon-inner
+                display: inline-flex
+                align-content: center
+                justify-content: center
+                width: 2rem
+                height: 2rem
+          .item-description-container
+            min-height: 4rem
+            h3
+              font-family: "Questrial"
+              font-weight: 400
+              font-size: 1.25rem
+              line-height: 1.5rem
+              letter-spacing: 0
+              vertical-align: middle
+              color: $font-body-strong-color
+            p
+              font-family: "Questrial"
+              font-weight: 400
+              font-size: 1rem
+              line-height: 1.25rem
+              letter-spacing: 0
+              vertical-align: middle
+              color: $font-body-color
+
+  //content team tiles
+  &.elementor-content-team-tile-widget
+    .content
+      width: 100%
+      padding: 2rem 1rem
+      display: flex
+      flex-direction: column
+      align-items: center
+      h1
+        margin-bottom: 1rem
+      .content-text
+        *
+          color: $font-body-color
+        p
+          text-align: center
+      .comparison-group
+        padding-top: 1rem
+        width: 100%
+        display: inline-flex
+        justify-content: space-evenly
+        flex-wrap: wrap
+        column-gap: 1rem
+        row-gap: 1rem
+        .comparison-item
+          border: 1px solid $grey
+          border-radius: .75rem
+          padding: .75rem
+          width: calc(25% - 1rem)
+          .item-image-container
+            border-radius: .75rem
+            overflow: hidden
+          .item-description-container
+            margin-top: 1rem
+            padding-top: 1rem
+            border-top: 2px solid $link-hover
+            min-height: 4rem
+            h3
+              font-family: "Questrial"
+              font-weight: 400
+              font-size: 1.25rem
+              line-height: 1.5rem
+              letter-spacing: 0
+              vertical-align: middle
+              color: $font-body-strong-color
+            p
+              font-family: "Questrial"
+              font-weight: 400
+              font-size: 1rem
+              line-height: 1.25rem
+              letter-spacing: 0
+              vertical-align: middle
+              color: $font-body-color
+            a
+              span
+                color: $link-hover
 
   //content testimonials
   &.elementor-content-testimonials-widget
@@ -1396,6 +1611,9 @@ footer
     margin-bottom: .5rem
     letter-spacing: 0
     vertical-align: middle
+  .i2c-meta-info
+    *
+      color: $font-body-color
   p
     font-family: "Instrument Sans", Sans-serif
     font-weight: 400
@@ -1426,3 +1644,105 @@ footer
     padding: 1rem
     width: 100%
     overflow: hidden
+
+
+.i2g-modal-content
+  border: 0.75rem solid $white
+  border-radius: 1.25rem
+  background-color: $light-blue
+  padding: 1rem
+  height: 100%
+  width: 100%
+  overflow: hidden
+  display: inline-flex
+  .content
+    display: inline-flex
+    flex-direction: column
+    align-items: center
+    .i2g-tag
+      display: inline-block
+      border-radius: .5rem
+      padding: .5rem .25rem
+      background-color: transparent
+      font-family: "Instrument Sans"
+      font-size: .75rem
+      line-height: 1.5rem
+      letter-spacing: -3%
+      vertical-align: middle
+      text-transform: uppercase
+      font-weight: 600
+      margin-bottom: 1rem
+      &.tag-primary
+        background-color: $link-hover
+        color: $white
+    h3
+      font-family: "Questrial"
+      font-weight: 400
+      font-size: 1.5rem
+      line-height: 2.25rem
+      margin-bottom: .5rem
+      letter-spacing: 0
+      vertical-align: middle
+    p
+      font-family: "Instrument Sans", Sans-serif
+      font-weight: 400
+      font-size: 1rem
+      line-height: 1.5rem
+      letter-spacing: -3%
+      vertical-align: middle
+      text-align: center
+      color: $font-body-color
+  .modal-body
+    padding: 0
+
+
+#call_modal
+  .wpforms-container
+    *
+      font-family: "Instrument Sans", Sans-serif
+    margin: 0 !important
+    width: 100%
+    padding: .5rem .5rem
+    border: 0.75rem solid $white
+    border-radius: 1.25rem
+    background-color: $white
+    box-shadow: 0 0 1px 0 $shadow-color
+    .wpforms-field-row, .wpforms-field-medium
+      width: 100%
+      max-width: 100%
+    label, legend
+      color: $font-body-color
+      font-weight: 600
+    ul
+      label
+        font-weight: 400
+        padding-inline-start: 0 !important
+    input, textarea
+      background-color: $light-blue
+      border-radius: .75rem
+      padding: 1rem 1rem
+      &::placeholder
+        color: $font-body-color
+    button
+      width: 100%
+      padding: 1rem 1rem
+      background-color: $link-hover !important
+      border-radius: .75rem
+    .wpforms-field-radio
+      ul
+        display: inline-flex
+        flex-wrap: wrap
+        label
+          font-size: .75rem
+      .wpforms-field-description
+        font-family: "Instrument Sans", Sans-serif
+        font-weight: 400
+        font-size: 1rem
+        line-height: 1.5rem
+        letter-spacing: -3%
+
+.e-con-inner
+  .i2g-images-row
+    .elementor-content-image-widget
+      min-height: 256px
+      height: 256px
