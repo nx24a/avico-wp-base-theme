@@ -25,10 +25,7 @@ $home_link = "/".$lang."/".$base['home_link'];
                                 </a>
                             </div>
                             <div>
-                                <p><?=$labels['footer']['footer_text'];?><br/><br/>
-                                    <?=$labels['footer']['footer_address'];?><br/><br/>
-                                    <?php wp_nav_menu( array( 'theme_location' => 'footer-contact', 'container_class' => 'i2g-footer-menu-wrap' ) ); ?>
-                                </p>
+                                <p><?=$labels['footer']['footer_text'];?></p>
                             </div>
                         </div>
                         <div class="col-3">
@@ -45,13 +42,14 @@ $home_link = "/".$lang."/".$base['home_link'];
                         </div>
                         <div class="col-3">
                             <p>
-                                <strong><?=$labels['footer']['footer_link_row_solutions'];?></strong>
+                                <strong><?=$labels['footer']['footer_link_row_contact'];?></strong><br/><br/>
+                                <?=$labels['footer']['footer_address'];?>
                             </p>
-                            <?php wp_nav_menu( array( 'theme_location' => 'footer-solutions', 'container_class' => 'i2g-footer-menu-wrap' ) ); ?>
+                            <?php wp_nav_menu( array( 'theme_location' => 'footer-contact', 'container_class' => 'i2g-footer-menu-wrap' ) ); ?>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-12 mt-5">
                             <p class="text-center"><strong>inno2consult</strong> – powered by inno2grid</p>
                         </div>
                     </div>

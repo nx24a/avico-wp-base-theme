@@ -74,6 +74,7 @@ function add_normalize_CSS() {
     wp_enqueue_style( 'normalize-styles', "/wp-content/themes/avico-wp-base-theme/assets/dist/css/normalize.min.css");
     wp_enqueue_style( 'bootstrap-styles', "/wp-content/themes/avico-wp-base-theme/assets/dist/bootstrap/css/bootstrap.min.css");
     wp_enqueue_style( 'theme-styles', "/wp-content/themes/avico-wp-base-theme/assets/dist/css/theme.css");
+    wp_enqueue_style('elementor-frontend-css', '/wp-content/plugins/elementor/assets/css/frontend.min.css');
 
     wp_enqueue_script('bootstrap-scripts', "/wp-content/themes/avico-wp-base-theme/assets/dist/bootstrap/js/bootstrap.bundle.min.js");
     wp_enqueue_script('theme-scripts', "/wp-content/themes/avico-wp-base-theme/assets/dist/js/theme.js");
@@ -119,7 +120,7 @@ function register_menus() {
 add_action( 'init', 'register_menus' );
 
 function wpdocs_theme_setup() {
-    add_image_size( 'i2g-tile-image-default-size', 372, 100, array( 'center', 'center' ) );
+    add_image_size( 'i2g-tile-image-default-size', 372, 200, array( 'center', 'center' ) );
     add_image_size( 'i2g-tile-insights-big-size', 386, 217, array( 'center', 'center' ) );
     add_image_size( 'i2g-tile-insights-aside-size', 140, 194, array( 'center', 'center' ) );
     add_image_size( 'i2g-image-abstract-aside-size', 620, 600, array( 'center', 'center' ) );
@@ -148,15 +149,48 @@ function i2c_referenz_post_type() {
             'public'      => true,
             'has_archive' => true,
             'rewrite'     => array( 'slug' => 'referenz' ),
+            'taxonomies' => array('reference_tags','category'),
             'supports' => array(
                 'title',
                 'editor',
+                'excerpt',
                 'custom-fields',
                 'thumbnail',
             )
         )
     );
 }
+
+function i2c_referenz_taxonomy() {
+    register_taxonomy(
+        'reference_tags',  // The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces).
+        'i2c_reference',             // post type name
+        array(
+            'hierarchical' => true,
+            'label' => 'Dienstleistungen', // display name
+            'query_var' => true,
+            'rewrite' => array(
+                'slug' => 'reference_tag',    // This controls the base slug that will display before each term
+                'with_front' => false  // Don't display the category base before
+            )
+        )
+    );
+//    register_taxonomy(
+//        'reference_categories',  // The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces).
+//        'i2c_reference',             // post type name
+//        array(
+//            'hierarchical' => true,
+//            'label' => 'Referenzkategorie', // display name
+//            'query_var' => true,
+//            'rewrite' => array(
+//                'slug' => 'reference_category',    // This controls the base slug that will display before each term
+//                'with_front' => false  // Don't display the category base before
+//            )
+//        )
+//    );
+}
+add_action( 'init', 'i2c_referenz_taxonomy');
+
 add_action('init', 'i2c_referenz_post_type');
 add_theme_support( 'post-thumbnails', array( 'post', 'page', 'i2c_reference' ) );
 
@@ -164,12 +198,12 @@ add_action('wp_insert_post', 'set_default_custom_fields_i2c_reference');
 
 function set_default_custom_fields_i2c_reference($post_id)
 {
-    if ( $_GET['post_type'] === 'i2c_reference' ) {
-        add_post_meta($post_id, 'referenz_branche', '', true);
-        add_post_meta($post_id, 'referenz_kunde', '', true);
-        add_post_meta($post_id, 'referenz_projekttyp', '', true);
-        add_post_meta($post_id, 'referenz_zeitraum', '', true);
-        #add_metadata('post')
+    if(isset($_GET['post_type'])) {
+        if ( $_GET['post_type'] === 'i2c_reference' ) {
+            add_post_meta($post_id, 'referenz_kunde', '', true);
+            add_post_meta($post_id, 'referenz_zeitraum', '', true);
+            add_post_meta($post_id, 'referenz_zitat', '', true);
+        }
     }
     return true;
 }
